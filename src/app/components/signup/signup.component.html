@@ -1,0 +1,18 @@
+
+
+<form class="container" [formGroup]="registerForm">
+    <h4>Register Page</h4>
+    <div class="form-group">
+        <input type="email" placeholder="Enter Email" [formControl]="email">
+        <h5 class="red-text" [hidden]="email.valid || email.untouched">Enter Correct Email</h5>
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Enter Password" [formControl]="password">
+        <h5 class="red-text" [hidden]="password.valid || password.untouched">Enter Correct Password</h5>
+    </div>
+    <div class="button-group">
+        <button type="button" class="btn btn-green disable" [disabled]="registerForm.invalid" (click)="register()">Register Yourself</button>
+        <button type="button" class="btn btn-red"  (click)="reset()">Reset</button>
+    </div>
+</form>
+
